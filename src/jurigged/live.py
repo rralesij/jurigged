@@ -381,3 +381,10 @@ def cli():  # pragma: no cover
 
     if opts.interactive:
         code.interact(banner=banner, local=vars(mod), exitmsg="")
+    
+    try:
+        while True:
+            pass
+    except KeyboardInterrupt:
+        watcher.stop()
+        watcher.join()
